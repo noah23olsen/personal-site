@@ -22,14 +22,14 @@
     </div>
   </div>
 
-  <div v-else class="d-flex flex-column min-vh-100">
-    <div class="flex-grow-1 bg-black d-flex justify-content-center align-items-center">
+  <div v-else class="page-container">
+    <div class="content-wrapper">
       <a class="text-white" href="https://www.google.com/search?q=the+answer+to+life%2C+the+universe%2C+and+everything"
         target="_blank">42
       </a>
     </div>
 
-    <div class="bg-black py-3">
+    <div class="social-links">
       <div class="d-flex w-50 justify-content-between mx-auto">
         <a class="links-color" href="https://github.com/noah23olsen" target="_blank">github</a>
         <a class="links-color" href="https://twitter.com/noaholsen_" target="_blank">x</a>
@@ -140,6 +140,38 @@ body {
   100% {
     opacity: 0;
     transform: scale(0) rotate(360deg);
+  }
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: black;
+}
+
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.social-links {
+  padding-bottom: 15px;
+  background-color: black;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    min-height: -webkit-fill-available;
+  }
+
+  .social-links {
+    padding-bottom: calc(10px + env(safe-area-inset-bottom));
   }
 }
 </style>
