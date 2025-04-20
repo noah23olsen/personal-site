@@ -68,4 +68,18 @@ export default {
 .bg-cyan {
   background-color: rgb(149, 188, 192);
 }
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  height: 100%;
+}
+
+#app {
+  height: 100%;
+  background-color: black;
+}
 </style>
