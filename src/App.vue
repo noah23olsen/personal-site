@@ -37,6 +37,8 @@
       </div>
     </div>
   </div>
+
+  <div class="sparkle-container"></div>
 </template>
 
 <script>
@@ -57,6 +59,35 @@ export default {
       this.currentTitle = to.meta.title || "-";
     },
   },
+  mounted() {
+    document.addEventListener('mousemove', this.createSparkle);
+  },
+  beforeUnmount() {
+    document.removeEventListener('mousemove', this.createSparkle);
+  },
+  methods: {
+    createSparkle(e) {
+      const sparkle = document.createElement('div');
+      sparkle.className = 'sparkle';
+      sparkle.style.left = e.clientX + 'px';
+      sparkle.style.top = e.clientY + 'px';
+
+      // Random size between 2 and 6 pixels
+      const size = Math.random() * 4 + 2;
+      sparkle.style.width = size + 'px';
+      sparkle.style.height = size + 'px';
+
+      // Random rotation
+      sparkle.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+      document.querySelector('.sparkle-container').appendChild(sparkle);
+
+      // Remove sparkle after animation
+      setTimeout(() => {
+        sparkle.remove();
+      }, 1000);
+    }
+  }
 };
 </script>
 
@@ -81,5 +112,34 @@ body {
 #app {
   height: 100%;
   background-color: black;
+}
+
+.sparkle-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.sparkle {
+  position: absolute;
+  background: linear-gradient(45deg, #fff, rgba(255, 255, 255, 0.8));
+  border-radius: 50%;
+  animation: sparkle-fade 1s ease-out forwards;
+}
+
+@keyframes sparkle-fade {
+  0% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0) rotate(360deg);
+  }
 }
 </style>
