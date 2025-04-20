@@ -22,15 +22,15 @@
     </div>
   </div>
 
-  <div v-else>
-    <div class="bg-black d-flex justify-content-center align-items-center" style="height: 93vh;">
+  <div v-else class="d-flex flex-column min-vh-100">
+    <div class="flex-grow-1 bg-black d-flex justify-content-center align-items-center">
       <a class="text-white" href="https://www.google.com/search?q=the+answer+to+life%2C+the+universe%2C+and+everything"
         target="_blank">42
       </a>
     </div>
 
-    <div class="bg-black d-flex align-items-center justify-content-center" style="height: 7vh;">
-      <div class="d-flex w-50 justify-content-between">
+    <div class="bg-black py-3">
+      <div class="d-flex w-50 justify-content-between mx-auto">
         <a class="links-color" href="https://github.com/noah23olsen" target="_blank">github</a>
         <a class="links-color" href="https://twitter.com/noaholsen_" target="_blank">x</a>
         <a class="links-color" href="https://www.linkedin.com/in/noaholsen-/" target="_blank">linkedin</a>
