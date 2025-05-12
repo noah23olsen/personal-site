@@ -30,8 +30,7 @@
     </div>
 
     <div class="social-links">
-      <div class="d-flex w-50 justify-content-between mx-auto">
-        <a class="links-color" href="https://github.com/noah23olsen" target="_blank">github</a>
+      <div class="d-flex w-90 justify-content-between mx-5">
         <a class="links-color" href="https://twitter.com/noaholsen_" target="_blank">x</a>
         <a class="links-color" href="https://www.linkedin.com/in/noaholsen-/" target="_blank">linkedin</a>
       </div>
